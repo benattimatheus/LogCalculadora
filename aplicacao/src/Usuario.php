@@ -81,4 +81,30 @@ class Usuario
         return false;
     }
 
+    public function validarDadosEntrada() {
+        if (empty($this->nome) || empty($this->peso) || empty($this->altura) || empty($this->sexo) || empty($this->dataNascimento)) {
+            throw new ExemploException('Todos os campos são obrigatórios.', 1);
+        }
+
+        if (!is_numeric($this->peso) || $this->peso <= 0) {
+            throw new ExemploException('O peso deve ser um número positivo.', 2);
+        }
+
+        if (!is_numeric($this->altura) || $this->altura <= 0) {
+            throw new ExemploException('A altura deve ser um número positivo.', 3);
+        }
+
+        if ($this->dataNascimento > new DateTimeImmutable()) {
+            throw new ExemploException('A data de nascimento não pode estar no futuro.', 4);
+        }
+    }
+
+    public function calcularIMC() {
+        if ($this->altura == 0) {
+            throw new ExemploException('Altura não pode ser zero.', 5);
+        }
+    
+        return $this->peso / ($this->altura * $this->altura);
+    }
+    
 }
