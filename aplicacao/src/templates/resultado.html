@@ -1,25 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/css/imagens/calculadora.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
     <title>Resultado</title>
 </head>
+
 <body>
-    
-    <div>
-        <h3>{{USUARIO}}</h3>
-        <ul>
-            <li>Peso: {{PESO}}</li>
-            <li>Altura: {{ALTURA}}</li>
-            <li>Idade: {{IDADE}}</li>
-            <li>Sexo: {{SEXO}}</li>
-        </ul>
-        <div>
-            <h3>Resultado: {{ICM}}</h3>
-            <h4>Classificação: {{CLASSIFICACAO}}</h4>
+    <div id="idFundo">
+        <div id="idConteudo">
+            <div class="cabecalho">
+                <span>Calculadora IMC</span>
+            </div>
+            <div id="idInformacoes">
+                <div>
+                    <h4>{{USUARIO}}</h4>
+                    <ul>
+                        <li>Peso: {{PESO}}</li>
+                        <li>Altura: {{ALTURA}}</li>
+                        <li>Idade: {{IDADE}}</li>
+                        <li>Sexo: {{SEXO}}</li>
+                    </ul>
+                  <div>
+                    <h3 id="idErro">
+                     {{ERRO}}
+                    </h3>
+                  </div>
+
+                    <div>
+                        <h4>Resultado: {{ICM}}</h4>
+                        <h4>Classificação: {{CLASSIFICACAO}}</h4>
+                    </div>
+
+                    <a href="/index.html">Calcular Novamente</a>
+                </div>
+            </div>
         </div>
     </div>
-    <a href="/index.html">Calcular Novamente</a>
 </body>
+
 </html>

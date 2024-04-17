@@ -1,7 +1,6 @@
 <?php
 
-enum SexoEnum: string
-{
+enum SexoEnum: string{
     case M = 'Masculino';
     case F = 'Feminino';
-}   
+}

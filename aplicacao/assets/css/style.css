@@ -1,0 +1,159 @@
+/* Configurações gerais */
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+span {
+  font-size: 15px;
+
+}
+
+a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  background:
+    linear-gradient(to right,
+      rgb(255, 255, 255),
+      rgb(255, 255, 255)),
+    linear-gradient(to right,
+      rgba(0, 204, 255, 1),
+      rgb(201, 11, 191));
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+a:hover {
+  background-size: 0 3px, 100% 3px;
+}
+
+
+/* ID's */
+
+#idFundo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(34, 61, 195);
+  background: linear-gradient(20deg, rgb(5, 48, 112) 0%, rgb(216, 136, 241) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#idConteudo {
+  /* border: solid rgb(255, 8, 0) 2px; */
+  width: 35%;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  border-radius: 7px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 7px 7px 10px 1px rgba(0, 0, 0, 0.35);
+}
+
+#idFormulario {
+  /* border: solid green 3px; */
+  margin: 3% auto;
+  width: 90%;
+  max-width: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
+}
+
+#idFormulario input,
+#idFormulario select,
+#idFormulario label {
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+
+#idNomeForm {
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+#idDataNascForm {
+  padding: 5px;
+  margin-bottom: 12px;
+}
+
+#idSexoForm {
+  padding: 5px;
+  margin-bottom: 12px;
+}
+
+#idPesoForm {
+  padding: 5px;
+  margin-bottom: 12px;
+}
+
+#idAlturaForm {
+  padding: 5px;
+  margin-bottom: 12px;
+}
+
+#idInformacoes {
+  margin: 3% auto;
+  width: 90%;
+  max-width: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
+}
+
+#idNome, #idDataNasc, #idPeso, #idAltura{
+  margin-top: 2px;
+  padding: 5px;
+}
+
+#idSexo {
+   padding: 5px 5px 5px 0px; 
+}
+
+#idErro {
+  color: red;
+}
+
+/* Classes */
+
+.cabecalho {
+  background-color: rgba(4, 37, 113, 1);
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  color: white;
+  border-radius: 7px 7px 0px 0px;
+}
+
+.botaoCalcular {
+  /* width: 55%; */
+  width: 97.3%;
+  margin-left: 1.5%;
+  padding: 3% 0%;
+  text-align: center;
+  cursor: pointer;
+  color: white;
+  background: rgba(4, 37, 113, 1);
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  transition: 0.5s ease-in-out;
+}
+
+.botaoCalcular:hover {
+  transition: 0.5s ease-in-out;
+  background: #6586f5;
+}

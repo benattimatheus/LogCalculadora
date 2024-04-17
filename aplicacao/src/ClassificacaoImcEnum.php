@@ -1,6 +1,5 @@
 <?php
 
-
 enum ClassificacaoImcEnum: string
 {
     case Magreza            = 'Magreza';

@@ -6,24 +6,34 @@ require_once __DIR__ . '/src/SexoEnum.php';
 require_once __DIR__ . '/src/ClassificacaoImcEnum.php';
 require_once __DIR__ . '/src/ExemploException.php';
 
-try {
-    if (isset($_POST['nome'], $_POST['peso'], $_POST['altura'], $_POST['sexo'], $_POST['data_nascimento'])) {
-        $usuario = new Usuario(
-            $_POST['nome'],
-            new DateTimeImmutable($_POST['data_nascimento']),
-            floatval($_POST['peso']),
-            floatval($_POST['altura']),
-            SexoEnum::from($_POST['sexo'])
-        );
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    try {
+        $nome = $_POST['nome'];
+        $peso = floatval($_POST['peso']);
+        $altura = floatval($_POST['altura']);
+        $sexo = $_POST['sexo'];
+        $dataNasc = $_POST['dataNasc'];
 
+        if ($sexo !== 'Masculino' && $sexo !== 'Feminino') {
+            throw new ExemploException('Todos os campos são obrigatórios.', 1);;
+        }
+
+        $usuario = new Usuario(
+            nome: $nome,
+            peso: $peso,
+            altura: $altura,
+            sexo: SexoEnum::from($_POST['sexo']),
+            dataNascimento: new DateTimeImmutable($dataNasc)
+        );
         $usuario->validarDadosEntrada();
 
-        $imc = $usuario->calcularIMC();
+        $calculadora = new CalculadoraImc($usuario);
+        $imc = $calculadora->calcular();
 
-        // 1) ler o template de resposta
+        $classificacao = $calculadora->classificarPorFaixaEtariaSexo();
+
         $template = file_get_contents(__DIR__ . '/src/templates/resultado.html');
 
-        // 2) trocar cada valor estático pelo valor do script
         $template = str_replace(
             [
                 '{{USUARIO}}',
@@ -31,6 +41,7 @@ try {
                 '{{ALTURA}}',
                 '{{IDADE}}',
                 '{{SEXO}}',
+                '{{ERRO}}',
                 '{{ICM}}',
                 '{{CLASSIFICACAO}}'
             ],
@@ -40,17 +51,41 @@ try {
                 $usuario->getAltura(),
                 $usuario->getIdadeAtual(),
                 $usuario->getSexo()->value,
+                '',
                 $imc,
-                ClassificacaoImcEnum::classifica($imc)
+                $classificacao
             ],
-            $template);
+            $template
+        );
 
         echo $template;
-    } else {
-        throw new Exception("Por favor, preencha todos os campos do formulário.");
+    } catch (ExemploException $e) {
+        $template = file_get_contents(__DIR__ . '/src/templates/resultado.html');
+
+        $template = str_replace(
+            [
+                '{{USUARIO}}',
+                '{{PESO}}',
+                '{{ALTURA}}',
+                '{{IDADE}}',
+                '{{SEXO}}',
+                '{{ERRO}}',
+                '{{ICM}}',
+                '{{CLASSIFICACAO}}'
+            ],
+            [
+                '',
+                '',
+                '',
+                '',
+                '',
+                $e->getMessage(),
+                '',
+                ''
+            ],
+            $template
+        );
+
+        echo $template;
     }
-} catch (ExemploException $e) {
-    echo "Erro: " . $e->getMessage();
-} catch (Exception $e) {
-    echo "Erro: " . $e->getMessage();
 }
