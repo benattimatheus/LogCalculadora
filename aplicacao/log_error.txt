@@ -74,3 +74,43 @@ File: C:\Users\Matheus\Desktop\CalculadoraIMC\app.php
 Line:18
 ErrorCode: 1
 Stack Strace: #0 {main}
+Message: Todos os campos são obrigatórios.
+File: C:\Users\Matheus\Desktop\LogCalculadora\aplicacao\app.php
+Line:18
+ErrorCode: 1
+Stack Strace: #0 {main}
+Message: A altura deve ser um número positivo e válido (0kg - 2.8m).
+File: C:\Users\Matheus\Desktop\LogCalculadora\aplicacao\src\Usuario.php
+Line:52
+ErrorCode: 3
+Stack Strace: #0 C:\Users\Matheus\Desktop\LogCalculadora\aplicacao\app.php(28): Usuario->validarDadosEntrada()
+#1 {main}
+Message: Todos os campos são obrigatórios.
+File: C:\Users\Matheus\Desktop\LogCalculadora\aplicacao\app.php
+Line:18
+ErrorCode: 1
+Stack Strace: #0 {main}
+Message: O peso deve ser um número positivo e válido (10kg - 650kg).
+File: C:\Users\Matheus\Desktop\LogCalculadora\aplicacao\src\Usuario.php
+Line:48
+ErrorCode: 2
+Stack Strace: #0 C:\Users\Matheus\Desktop\LogCalculadora\aplicacao\app.php(28): Usuario->validarDadosEntrada()
+#1 {main}
+Message: A altura deve ser um número positivo e válido (0.5m - 2.8m).
+File: C:\Users\Matheus\Desktop\LogCalculadora\aplicacao\src\Usuario.php
+Line:52
+ErrorCode: 3
+Stack Strace: #0 C:\Users\Matheus\Desktop\LogCalculadora\aplicacao\app.php(28): Usuario->validarDadosEntrada()
+#1 {main}
+Message: Insira um ano válido.
+File: C:\Users\Matheus\Desktop\LogCalculadora\aplicacao\src\Usuario.php
+Line:56
+ErrorCode: 4
+Stack Strace: #0 C:\Users\Matheus\Desktop\LogCalculadora\aplicacao\app.php(28): Usuario->validarDadosEntrada()
+#1 {main}
+Message: O cálculo deve ser feito com pessoas com mais de 10 anos de idade.
+File: C:\Users\Matheus\Desktop\LogCalculadora\aplicacao\src\CalculadoraImc.php
+Line:41
+ErrorCode: 5
+Stack Strace: #0 C:\Users\Matheus\Desktop\LogCalculadora\aplicacao\app.php(33): CalculadoraImc->classificarPorFaixaEtariaSexo()
+#1 {main}

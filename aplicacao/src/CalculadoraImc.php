@@ -32,14 +32,13 @@ class CalculadoraImc
         } else {
             if ($idade >= 10 && $idade < 20) {
                 $imc = $this->calcular();
-
                 if ($sexo === 'Feminino') {
                     return $this->classificarPorIdadePercentilFeminino($idade, $imc);
                 } elseif ($sexo === 'Masculino') {
                     return $this->classificarPorIdadePercentilMasculino($idade, $imc);
                 }
             } else {
-                return 'O cálculo deve ser feito com pessoas com mais de 10 anos de idade.';
+                throw new ExemploException('O cálculo deve ser feito com pessoas com mais de 10 anos de idade.', 5);
             }
         }
     }
