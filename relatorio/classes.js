@@ -1,0 +1,280 @@
+var classes = [
+    {
+        "name": "CalculadoraImc",
+        "interface": false,
+        "abstract": false,
+        "final": false,
+        "methods": [
+            {
+                "name": "__construct",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "calcular",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "classificarPorFaixaEtariaSexo",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "classificarPorIdadePercentilFeminino",
+                "role": null,
+                "public": false,
+                "private": true,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "classificarPorIdadePercentilMasculino",
+                "role": null,
+                "public": false,
+                "private": true,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "classificarPorPercentis",
+                "role": null,
+                "public": false,
+                "private": true,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            }
+        ],
+        "nbMethodsIncludingGettersSetters": 6,
+        "nbMethods": 5,
+        "nbMethodsPrivate": 3,
+        "nbMethodsPublic": 2,
+        "nbMethodsGetter": 0,
+        "nbMethodsSetters": 1,
+        "wmc": 15,
+        "ccn": 11,
+        "ccnMethodMax": 7,
+        "externals": [
+            "Usuario",
+            "ClassificacaoImcEnum",
+            "ExemploException"
+        ],
+        "parents": [],
+        "implements": [],
+        "lcom": 1,
+        "length": 173,
+        "vocabulary": 78,
+        "volume": 1087.37,
+        "difficulty": 8.74,
+        "effort": 9502.71,
+        "level": 0.11,
+        "bugs": 0.36,
+        "time": 528,
+        "intelligentContent": 124.43,
+        "number_operators": 39,
+        "number_operands": 134,
+        "number_operators_unique": 9,
+        "number_operands_unique": 69,
+        "cloc": 0,
+        "loc": 62,
+        "lloc": 62,
+        "mi": 38.16,
+        "mIwoC": 38.16,
+        "commentWeight": 0,
+        "kanDefect": 0.57,
+        "relativeStructuralComplexity": 81,
+        "relativeDataComplexity": 1.23,
+        "relativeSystemComplexity": 82.23,
+        "totalStructuralComplexity": 486,
+        "totalDataComplexity": 7.4,
+        "totalSystemComplexity": 493.4,
+        "package": "\\",
+        "pageRank": 0.15,
+        "afferentCoupling": 0,
+        "efferentCoupling": 3,
+        "instability": 1,
+        "violations": {}
+    },
+    {
+        "name": "ExemploException",
+        "interface": false,
+        "abstract": false,
+        "final": false,
+        "methods": [
+            {
+                "name": "__construct",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "gerarLog",
+                "role": null,
+                "public": false,
+                "private": true,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            }
+        ],
+        "nbMethodsIncludingGettersSetters": 2,
+        "nbMethods": 2,
+        "nbMethodsPrivate": 1,
+        "nbMethodsPublic": 1,
+        "nbMethodsGetter": 0,
+        "nbMethodsSetters": 0,
+        "wmc": 2,
+        "ccn": 1,
+        "ccnMethodMax": 1,
+        "externals": [
+            "Exception"
+        ],
+        "parents": [
+            "Exception"
+        ],
+        "implements": [],
+        "lcom": 1,
+        "length": 39,
+        "vocabulary": 14,
+        "volume": 148.49,
+        "difficulty": 3.14,
+        "effort": 465.71,
+        "level": 0.32,
+        "bugs": 0.05,
+        "time": 26,
+        "intelligentContent": 47.34,
+        "number_operators": 16,
+        "number_operands": 23,
+        "number_operators_unique": 3,
+        "number_operands_unique": 11,
+        "cloc": 0,
+        "loc": 18,
+        "lloc": 18,
+        "mi": 57.28,
+        "mIwoC": 57.28,
+        "commentWeight": 0,
+        "kanDefect": 0.15,
+        "relativeStructuralComplexity": 49,
+        "relativeDataComplexity": 0.13,
+        "relativeSystemComplexity": 49.13,
+        "totalStructuralComplexity": 98,
+        "totalDataComplexity": 0.25,
+        "totalSystemComplexity": 98.25,
+        "package": "\\",
+        "pageRank": 0.57,
+        "afferentCoupling": 2,
+        "efferentCoupling": 1,
+        "instability": 0.33,
+        "violations": {}
+    },
+    {
+        "name": "Usuario",
+        "interface": false,
+        "abstract": false,
+        "final": false,
+        "methods": [
+            {
+                "name": "__construct",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getNome",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getDataNascimento",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getPeso",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getAltura",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getSexo",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getIdadeAtual",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "validarDadosEntrada",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            }
+        ],
+        "nbMethodsIncludingGettersSetters": 8,
+        "nbMethods": 3,
+        "nbMethodsPrivate": 0,
+        "nbMethodsPublic": 3,
+        "nbMethodsGetter": 5,
+        "nbMethodsSetters": 0,
+        "wmc": 13,
+        "ccn": 11,
+        "ccnMethodMax": 11,
+        "externals": [
+            "DateTimeInterface",
+            "SexoEnum",
+            "DateTimeInterface",
+            "SexoEnum",
+            "DateTimeImmutable",
+            "ExemploException",
+            "ExemploException",
+            "ExemploException",
+            "DateTimeImmutable",
+            "ExemploException"
+        ],
+        "parents": [],
+        "implements": [],
+        "lcom": 1,
+        "length": 74,
+        "vocabulary": 27,
+        "volume": 351.86,
+        "difficulty": 7.88,
+        "effort": 2770.91,
+        "level": 0.13,
+        "bugs": 0.12,
+        "time": 154,
+        "intelligentContent": 44.68,
+        "number_operators": 29,
+        "number_operands": 45,
+        "number_operators_unique": 7,
+        "number_operands_unique": 20,
+        "cloc": 0,
+        "loc": 56,
+        "lloc": 56,
+        "mi": 42.56,
+        "mIwoC": 42.56,
+        "commentWeight": 0,
+        "kanDefect": 0.43,
+        "relativeStructuralComplexity": 1,
+        "relativeDataComplexity": 3.31,
+        "relativeSystemComplexity": 4.31,
+        "totalStructuralComplexity": 8,
+        "totalDataComplexity": 26.5,
+        "totalSystemComplexity": 34.5,
+        "package": "\\",
+        "pageRank": 0.28,
+        "afferentCoupling": 1,
+        "efferentCoupling": 4,
+        "instability": 0.8,
+        "violations": {}
+    }
+]
